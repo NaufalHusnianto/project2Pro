@@ -4,6 +4,9 @@
  */
 package com.mycompany.pointofsales;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author user
@@ -15,7 +18,9 @@ public class dasboard extends javax.swing.JFrame {
      */
     public dasboard() {
         initComponents();
+      
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,10 +40,10 @@ public class dasboard extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        image = new javax.swing.JLabel();
         dataBarang = new javax.swing.JButton();
         dataAnggota = new javax.swing.JButton();
         transaksi = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -116,45 +121,52 @@ public class dasboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("aplikasi penjualan alat tulis");
-        setPreferredSize(new java.awt.Dimension(500, 500));
+        setPreferredSize(new java.awt.Dimension(1080, 700));
         setResizable(false);
+        setSize(new java.awt.Dimension(1080, 700));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Selamat Datang Dasboard (2).png"))); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(1080, 700));
 
         dataBarang.setText("Data Barang");
 
         dataAnggota.setText("Data Anggota");
 
         transaksi.setText("Transaksi");
+        transaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transaksiActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Selamat Datang Dasboard (2).png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(image)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(162, 162, 162)
+                .addGap(167, 167, 167)
                 .addComponent(dataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126)
+                .addGap(120, 120, 120)
                 .addComponent(dataAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140)
+                .addGap(138, 138, 138)
                 .addComponent(transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(image)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dataAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(transaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 43, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,9 +191,14 @@ public class dasboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transaksiActionPerformed
+
     /**
      * @param args the command line arguments
      */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -218,9 +235,9 @@ public class dasboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dataAnggota;
     private javax.swing.JButton dataBarang;
-    private javax.swing.JLabel image;
     private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
