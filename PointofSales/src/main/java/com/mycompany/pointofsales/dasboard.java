@@ -128,10 +128,16 @@ public class dasboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 700));
 
+        dataBarang.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dataBarang.setForeground(new java.awt.Color(51, 51, 51));
         dataBarang.setText("Data Barang");
 
+        dataAnggota.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dataAnggota.setForeground(new java.awt.Color(51, 51, 51));
         dataAnggota.setText("Data Anggota");
 
+        transaksi.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        transaksi.setForeground(new java.awt.Color(51, 51, 51));
         transaksi.setText("Transaksi");
         transaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
