@@ -45,13 +45,12 @@
                                       <Component id="exit" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Component id="username" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Component id="inputNama" min="-2" pref="261" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="username" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputNama" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -95,7 +94,7 @@
             <Component class="javax.swing.JLabel" name="image">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\SEMESTER 3\Desain tanpa judul (23).png"/>
+                  <Image iconType="3" name="/image/Desain tanpa judul (23).png"/>
                 </Property>
               </Properties>
             </Component>

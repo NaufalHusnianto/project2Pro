@@ -49,7 +49,7 @@ public class dasboard extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        image.setIcon(new javax.swing.ImageIcon("E:\\SEMESTER 3\\Desain tanpa judul (23).png")); // NOI18N
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Desain tanpa judul (23).png"))); // NOI18N
 
         welcome.setFont(new java.awt.Font("SansSerif", 1, 23)); // NOI18N
         welcome.setForeground(new java.awt.Color(51, 51, 51));
@@ -89,10 +89,9 @@ public class dasboard extends javax.swing.JFrame {
                                 .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGap(16, 16, 16)
-                            .addComponent(username))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(16, 16, 16)
-                            .addComponent(inputNama, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(username)
+                                .addComponent(inputNama, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(welcome)))
