@@ -39,8 +39,6 @@ public class barang extends javax.swing.JFrame {
         inputJumlahBarang = new javax.swing.JTextField();
         save = new javax.swing.JButton();
         hargaBarang = new javax.swing.JLabel();
-        totalHarga = new javax.swing.JLabel();
-        inputTotalHarga = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         inputCari = new javax.swing.JTextField();
@@ -108,9 +106,6 @@ public class barang extends javax.swing.JFrame {
         hargaBarang.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         hargaBarang.setText("Harga Barang");
 
-        totalHarga.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        totalHarga.setText("Total Harga");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -123,10 +118,6 @@ public class barang extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(totalHarga)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(inputTotalHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addComponent(jumlahBarang)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
@@ -164,11 +155,7 @@ public class barang extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputJumlahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jumlahBarang))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalHarga)
-                    .addComponent(inputTotalHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -185,12 +172,12 @@ public class barang extends javax.swing.JFrame {
         jTable2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nama Barang", "Kode Barang", "Harga Barang", "Jumlah Barang", "Total Harga"
+                "Nama Barang", "Kode Barang", "Harga Barang", "Jumlah Barang"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
@@ -233,7 +220,6 @@ public class barang extends javax.swing.JFrame {
         delete.setBackground(new java.awt.Color(219, 234, 255));
         delete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         delete.setForeground(new java.awt.Color(51, 51, 51));
-        delete.setIcon(new javax.swing.ImageIcon("E:\\SEMESTER 3\\PRAKTIKUM PEMROGRAMAN\\Elements_Java\\bin-1.png")); // NOI18N
         delete.setText("Delete");
         delete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +231,6 @@ public class barang extends javax.swing.JFrame {
         edit.setBackground(new java.awt.Color(219, 234, 255));
         edit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         edit.setForeground(new java.awt.Color(51, 51, 51));
-        edit.setIcon(new javax.swing.ImageIcon("E:\\SEMESTER 3\\PRAKTIKUM PEMROGRAMAN\\Elements_Java\\grid-edit.png")); // NOI18N
         edit.setText("Edit");
         edit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         edit.addActionListener(new java.awt.event.ActionListener() {
@@ -292,13 +277,13 @@ public class barang extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
+                .addGap(98, 98, 98)
                 .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
+                .addGap(97, 97, 97)
                 .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(95, 95, 95)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,11 +321,6 @@ public class barang extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_saveActionPerformed
-
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
 
@@ -364,6 +344,10 @@ public class barang extends javax.swing.JFrame {
     private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_refreshActionPerformed
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,7 +395,6 @@ public class barang extends javax.swing.JFrame {
     private javax.swing.JTextField inputJumlahBarang;
     private javax.swing.JTextField inputKodeBarang;
     private javax.swing.JTextField inputNamaBarang;
-    private javax.swing.JTextField inputTotalHarga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -425,6 +408,5 @@ public class barang extends javax.swing.JFrame {
     private javax.swing.JLabel namaBarang;
     private javax.swing.JButton refresh;
     private javax.swing.JButton save;
-    private javax.swing.JLabel totalHarga;
     // End of variables declaration//GEN-END:variables
 }
