@@ -123,10 +123,16 @@ public class dasboard extends javax.swing.JFrame {
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Selamat Datang Dasboard (2).png"))); // NOI18N
 
+        dataBarang.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dataBarang.setForeground(new java.awt.Color(51, 51, 51));
         dataBarang.setText("Data Barang");
 
+        dataAnggota.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dataAnggota.setForeground(new java.awt.Color(51, 51, 51));
         dataAnggota.setText("Data Anggota");
 
+        transaksi.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        transaksi.setForeground(new java.awt.Color(51, 51, 51));
         transaksi.setText("Transaksi");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
