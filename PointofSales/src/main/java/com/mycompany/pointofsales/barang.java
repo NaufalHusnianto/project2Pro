@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pointofsales;
-
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.table.*;
 /**
  *
  * @author user
@@ -15,6 +19,35 @@ public class barang extends javax.swing.JFrame {
      */
     public barang() {
         initComponents();
+        setLocationRelativeTo(this);
+        
+    }
+    private void tampildata(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Nama Barang");
+        model.addColumn("Kode Barang");
+        model.addColumn("Harga Barang");
+        model.addColumn("Jumlah Barang");
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+            String sql = "SELECT * FROM barang";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String nama = rs.getString("nama");
+                String kode = rs.getString("kode");
+                String harga = rs.getString("harga");
+                String stok = rs.getString("stok");
+                
+                model.addRow(new Object[]{nama,kode,harga,stok});
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditampilkan");
+            e.printStackTrace();
+        }
+        jTable2.setModel(model);
     }
 
     /**
@@ -26,6 +59,18 @@ public class barang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtNama = new javax.swing.JTextField();
+        txtKode = new javax.swing.JTextField();
+        txtHarga = new javax.swing.JTextField();
+        txtJumlah = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,7 +95,97 @@ public class barang extends javax.swing.JFrame {
         exit = new javax.swing.JButton();
         refresh = new javax.swing.JButton();
 
+        jDialog1.setTitle("EDIT DATA BARANG");
+
+        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("EDIT DATA BARANG");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(106, 106, 106))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel3)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        jLabel4.setText("nama barang");
+
+        jLabel5.setText("kode barang");
+
+        jLabel6.setText("harga barang");
+
+        jLabel7.setText("jumlah barang");
+
+        btnSave.setBackground(new java.awt.Color(0, 204, 255));
+        btnSave.setText("save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSave)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(33, 33, 33)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtKode, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSave)
+                .addGap(0, 26, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Data Barang");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -322,32 +457,150 @@ public class barang extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
-        // TODO add your handling code here:
+        try{
+            String cari = inputCari.getText();
+            
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM barang WHERE nama LIKE '%" + cari + "%'");
 
+            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+            model.setRowCount(0);
+            
+            while(rs.next()){
+                model.addRow(new Object[]{rs.getString("nama"), rs.getString("kode"), rs.getString("harga"), rs.getString("stok")});
+            }
+        }catch(Exception ex){
+            System.out.println("error : " + ex);
+        }
     }//GEN-LAST:event_cariActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        // TODO add your handling code here:
+        // DELETE DATA       
+        int baris = jTable2.getSelectedRow();
+        int kolom = 1;
+        String nilai = jTable2.getValueAt(baris, kolom).toString();
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
+            String deleteQuery = "DELETE FROM `barang` WHERE `barang`.`kode` =" + nilai;
+            PreparedStatement stDelete = conn.prepareStatement(deleteQuery);
+            stDelete.executeUpdate();
+            stDelete.close();
+            JOptionPane.showMessageDialog(this, "data berhasil dihapus");
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+        
+       //  CLEAR TABLE      
+        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+        dm.getDataVector().removeAllElements();
+        revalidate();
+        
+        //  TAMPIL DATA      
+       tampildata(); 
 
     }//GEN-LAST:event_deleteActionPerformed
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
+        jDialog1.setVisible(true);
+        jDialog1.setSize(400, 400);
+        jDialog1.setLocationRelativeTo(this);
 
     }//GEN-LAST:event_editActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
-
+        new dasboard().setVisible(true);
     }//GEN-LAST:event_exitActionPerformed
 
     private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Nama Barang");
+        model.addColumn("Kode Barang");
+        model.addColumn("Harga Barang");
+        model.addColumn("Jumlah Barang");
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+            String sql = "SELECT * FROM barang";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String nama = rs.getString("nama");
+                String kode = rs.getString("kode");
+                String harga = rs.getString("harga");
+                String stok = rs.getString("stok");
+                
+                model.addRow(new Object[]{nama,kode,harga,stok});
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditampilkan");
+            e.printStackTrace();
+        }
+        jTable2.setModel(model);
     }//GEN-LAST:event_refreshActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        // TODO add your handling code here:
+        String nama = inputNamaBarang.getText();
+        String kode = inputKodeBarang.getText();
+        String harga = inputHargaBarang.getText();
+        String stok = inputJumlahBarang.getText();
+       
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root","");
+            String sql = "INSERT INTO barang (nama, kode, harga, stok)VALUES (?, ?, ?, ?)";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, nama);
+            pstm.setString(2, kode);
+            pstm.setString(3, harga);
+            pstm.setString(4, stok);
+            pstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "data berhasil ditambahkan");
+       } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditambahkan");
+            e.printStackTrace();
+        }
+        
+        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+        dm.getDataVector().removeAllElements();
+        revalidate();
+        tampildata();
     }//GEN-LAST:event_saveActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        int baris = jTable2.getSelectedRow();
+        int kolom = 1;
+        String nilai = jTable2.getValueAt(baris, kolom).toString();
+        String upnama = txtNama.getText();
+        String upkode = txtKode.getText();
+        String upharga = txtHarga.getText();
+        String upstok = txtJumlah.getText();
+        
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
+            String updateQuery = "UPDATE `barang` SET `nama` = '" + upnama + "', `kode` = '" + upkode
+            + "', `harga` = '" + upharga + "', `stok` = '" + upstok + "' WHERE `barang`.`kode` = " + nilai;
+            PreparedStatement stUpdate = conn.prepareStatement(updateQuery);
+                    
+            stUpdate.executeUpdate();
+            stUpdate.close();
+            System.out.println("Data berhasil dirubah");
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+        
+        //  CLEAR TABLE      
+        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+        dm.getDataVector().removeAllElements();
+        revalidate();
+        
+       //  TAMPIL DATA
+        tampildata();
+        
+        jDialog1.dispose();
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,6 +638,7 @@ public class barang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton cari;
     private javax.swing.JButton delete;
     private javax.swing.JButton edit;
@@ -395,10 +649,17 @@ public class barang extends javax.swing.JFrame {
     private javax.swing.JTextField inputJumlahBarang;
     private javax.swing.JTextField inputKodeBarang;
     private javax.swing.JTextField inputNamaBarang;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
@@ -408,5 +669,9 @@ public class barang extends javax.swing.JFrame {
     private javax.swing.JLabel namaBarang;
     private javax.swing.JButton refresh;
     private javax.swing.JButton save;
+    private javax.swing.JTextField txtHarga;
+    private javax.swing.JTextField txtJumlah;
+    private javax.swing.JTextField txtKode;
+    private javax.swing.JTextField txtNama;
     // End of variables declaration//GEN-END:variables
 }
