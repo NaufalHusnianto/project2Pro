@@ -312,6 +312,35 @@ public class Member extends javax.swing.JFrame {
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -584,36 +613,40 @@ public class Member extends javax.swing.JFrame {
     }//GEN-LAST:event_refreshActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        int baris = jTable2.getSelectedRow();
-        int kolom = 1;
-        String nilai = jTable2.getValueAt(baris, kolom).toString();
-        String upID = txtID.getText();
-        String upNama = txtNama.getText();
-        String upAlamat = txtAlamat.getText();
-        String upNoHP = txtNoHP.getText();
+    int baris = jTable2.getSelectedRow();
+    int kolom = 0; 
+    String nilai = jTable2.getValueAt(baris, kolom).toString();
+    String upID = txtID.getText();
+    String upNama = txtNama.getText();
+    String upAlamat = txtAlamat.getText();
+    String upNoHP = txtNoHP.getText();
+    
+    try {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+        String updateQuery = "UPDATE `member` SET `id` = ?, `nama_pembeli` = ?, `alamat` = ?, `no_hp` = ? WHERE `member`.`id` = ?";
+        PreparedStatement stUpdate = conn.prepareStatement(updateQuery);
+        stUpdate.setString(1, upID);
+        stUpdate.setString(2, upNama);
+        stUpdate.setString(3, upAlamat);
+        stUpdate.setString(4, upNoHP);
+        stUpdate.setString(5, nilai);
+        
+        stUpdate.executeUpdate();
+        stUpdate.close();
+        System.out.println("Data berhasil diubah");
+    } catch (SQLException ex) {
+        ex.printStackTrace(); 
+    }
+    
+    // DELETE DATA MEMBER
+    DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+    dm.removeRow(baris);
+    
+    // TAMPILAN DATA MEMBER SETELAH UPDATE
+    tampilanDataMember();
+    
+    jDialog1.dispose();
 
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
-            String updateQuery = "UPDATE `member` SET `id` = '" + upID + "', `nama_pembeli` = '" + upNama
-            + "', `alamat` = '" + upAlamat + "', `no_hp` = '" + upNoHP + "' WHERE `member`.`id` = " + nilai;
-            PreparedStatement stUpdate = conn.prepareStatement(updateQuery);
-
-            stUpdate.executeUpdate();
-            stUpdate.close();
-            System.out.println("Data berhasil dirubah");
-        } catch (SQLException ex) {
-            ex.getMessage();
-        }
-
-        //  CLEAR TABLE
-        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
-        dm.getDataVector().removeAllElements();
-        revalidate();
-
-        //  TAMPIL DATA
-        tampilanDataMember();
-
-        jDialog1.dispose();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
