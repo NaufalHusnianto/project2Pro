@@ -18,7 +18,8 @@ public class dasboard extends javax.swing.JFrame {
      */
     public dasboard() {
         initComponents();
-      
+        setLocationRelativeTo(this);
+        this.dispose();
     }
     
 
@@ -148,10 +149,20 @@ public class dasboard extends javax.swing.JFrame {
         dataBarang.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         dataBarang.setForeground(new java.awt.Color(51, 51, 51));
         dataBarang.setText("Data Barang");
+        dataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataBarangActionPerformed(evt);
+            }
+        });
 
         dataAnggota.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         dataAnggota.setForeground(new java.awt.Color(51, 51, 51));
         dataAnggota.setText("Data Anggota");
+        dataAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataAnggotaActionPerformed(evt);
+            }
+        });
 
         transaksi.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         transaksi.setForeground(new java.awt.Color(51, 51, 51));
@@ -211,8 +222,22 @@ public class dasboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void transaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transaksiActionPerformed
-        // TODO add your handling code here:
+        new Transaksi().setVisible(true);
+        setLocationRelativeTo(this);
+        this.dispose();
     }//GEN-LAST:event_transaksiActionPerformed
+
+    private void dataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataBarangActionPerformed
+        new barang().setVisible(true);
+        setLocationRelativeTo(this);
+        this.dispose();
+    }//GEN-LAST:event_dataBarangActionPerformed
+
+    private void dataAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataAnggotaActionPerformed
+        new Member().setVisible(true);
+        setLocationRelativeTo(this);
+        this.dispose();
+    }//GEN-LAST:event_dataAnggotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,7 +271,6 @@ public class dasboard extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new dasboard().setVisible(true);
-                
             }
         });
     }

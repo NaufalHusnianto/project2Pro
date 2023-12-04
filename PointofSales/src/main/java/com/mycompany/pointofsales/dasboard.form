@@ -265,6 +265,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Data Barang"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dataBarangActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="dataAnggota">
           <Properties>
@@ -276,6 +279,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Data Anggota"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dataAnggotaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="transaksi">
           <Properties>
