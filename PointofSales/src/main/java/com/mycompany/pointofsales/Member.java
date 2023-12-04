@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pointofsales;
-
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author user
@@ -15,6 +17,35 @@ public class Member extends javax.swing.JFrame {
      */
     public Member() {
         initComponents();
+        setLocationRelativeTo(this);
+    }
+    
+    private void tampilanDataMember(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID");
+        model.addColumn("Nama");
+        model.addColumn("Alamat");
+        model.addColumn("Nomer HP");
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+            String sql = "SELECT * FROM member";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String id = rs.getString("id");
+                String nama_pembeli = rs.getString("nama_pembeli");
+                String alamat = rs.getString("alamat");
+                String no_hp = rs.getString("no_hp");
+                
+                model.addRow(new Object[]{id,nama_pembeli,alamat,no_hp});
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditampilkan");
+            e.printStackTrace();
+        }
+        jTable2.setModel(model);
     }
 
     /**
@@ -27,12 +58,24 @@ public class Member extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField4 = new javax.swing.JTextField();
+        jDialog1 = new javax.swing.JDialog();
+        txtNama = new javax.swing.JTextField();
+        txtAlamat = new javax.swing.JTextField();
+        txtNoHP = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         id = new javax.swing.JLabel();
-        noTelp = new javax.swing.JLabel();
+        noHP = new javax.swing.JLabel();
         nama = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         inputNama = new javax.swing.JTextField();
@@ -56,6 +99,94 @@ public class Member extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
+
+        btnSave.setBackground(new java.awt.Color(153, 204, 255));
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floppy-disk-save.png"))); // NOI18N
+        btnSave.setText("save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
+        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("EDIT DATA MEMBER");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(106, 106, 106))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel3)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        jLabel4.setText("ID");
+
+        jLabel5.setText("Nama");
+
+        jLabel6.setText("Alamat");
+
+        jLabel7.setText("Nomer HP");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSave)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(33, 33, 33)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSave)
+                .addGap(0, 24, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,11 +221,10 @@ public class Member extends javax.swing.JFrame {
         jPanel4.setForeground(new java.awt.Color(153, 204, 255));
 
         id.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        id.setForeground(new java.awt.Color(102, 102, 102));
         id.setText("ID");
 
-        noTelp.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        noTelp.setText("Nomer Telp");
+        noHP.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        noHP.setText("Nomer HP");
 
         nama.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         nama.setText("Nama");
@@ -127,7 +257,7 @@ public class Member extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(noTelp)
+                                .addComponent(noHP)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                                 .addComponent(inputNomer, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -162,7 +292,7 @@ public class Member extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputNomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(noTelp))
+                    .addComponent(noHP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -185,7 +315,7 @@ public class Member extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nama", "Alamat", "Nomer Telp"
+                "ID", "Nama", "Alamat", "Nomer HP"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
@@ -336,34 +466,155 @@ public class Member extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        // TODO add your handling code here:
+        // SAVE DATA MEMBER
+        String ID = inputID.getText();
+        String Nama = inputNama.getText();
+        String Alamat = inputAlamat.getText();
+        String NoHP = inputNomer.getText();
+       
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root","");
+            String sql = "INSERT INTO member (id, nama_pembeli, alamat, no_hp)VALUES (?, ?, ?, ?)";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, ID);
+            pstm.setString(2, Nama);
+            pstm.setString(3, Alamat);
+            pstm.setString(4, NoHP);
+            pstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "data berhasil ditambahkan");
+       } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditambahkan");
+            e.printStackTrace();
+        }
+        
+        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+        dm.getDataVector().removeAllElements();
+        revalidate();
+        tampilanDataMember();
      
     }//GEN-LAST:event_saveActionPerformed
 
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
-        // TODO add your handling code here:
+        //SEARCH DATA MEMBER
+        try{
+            String cari = inputCari.getText();
+            
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM member WHERE id LIKE '%" + cari + "%'");
+
+            DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+            model.setRowCount(0);
+            
+            while(rs.next()){
+                model.addRow(new Object[]{rs.getString("id"), rs.getString("nama_pembeli"), rs.getString("alamat"), rs.getString("no_hp")});
+            }
+        }catch(Exception ex){
+            System.out.println("error : " + ex);
+        }
         
     }//GEN-LAST:event_cariActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        // TODO add your handling code here:
+        // DELETE DATA MEMBER       
+        int baris = jTable2.getSelectedRow();
+        int kolom = 1;
+        String nilai = jTable2.getValueAt(baris, kolom).toString();
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
+            String deleteQuery = "DELETE FROM `member` WHERE `id`.`nama_pembeli` =" + nilai;
+            PreparedStatement stDelete = conn.prepareStatement(deleteQuery);
+            stDelete.executeUpdate();
+            stDelete.close();
+            JOptionPane.showMessageDialog(this, "data berhasil dihapus");
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+        
+       //  CLEAR TABLE MEMBER    
+        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+        dm.getDataVector().removeAllElements();
+        revalidate();
+        
+        //  TAMPILAN DATA MEMBER     
+       tampilanDataMember(); 
         
     }//GEN-LAST:event_deleteActionPerformed
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
-      
-
+        // EDIT DATA MEMBER
+        jDialog1.setVisible(true);
+        jDialog1.setSize(400, 400);
+        jDialog1.setLocationRelativeTo(this);
     }//GEN-LAST:event_editActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        // TODO add your handling code here:
-       
+        // EXIT DATA MEMBER
+        new dasboard().setVisible(true);
     }//GEN-LAST:event_exitActionPerformed
 
     private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
-        // TODO add your handling code here:
+        // REFRESH DATA MEMBER
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID");
+        model.addColumn("Nama");
+        model.addColumn("Alamat");
+        model.addColumn("Nomer HP");
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+            String sql = "SELECT * FROM member";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String id = rs.getString("id");
+                String nama_pembeli = rs.getString("nama_pembeli");
+                String alamat = rs.getString("alamat");
+                String no_hp = rs.getString("no_hp");
+                
+                model.addRow(new Object[]{id,nama_pembeli,alamat,no_hp});
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditampilkan");
+            e.printStackTrace();
+        }
+        jTable2.setModel(model);
     }//GEN-LAST:event_refreshActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        int baris = jTable2.getSelectedRow();
+        int kolom = 1;
+        String nilai = jTable2.getValueAt(baris, kolom).toString();
+        String upID = txtID.getText();
+        String upNama = txtNama.getText();
+        String upAlamat = txtAlamat.getText();
+        String upNoHP = txtNoHP.getText();
+
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
+            String updateQuery = "UPDATE `member` SET `id` = '" + upID + "', `nama_pembeli` = '" + upNama
+            + "', `alamat` = '" + upAlamat + "', `no_hp` = '" + upNoHP + "' WHERE `member`.`id` = " + nilai;
+            PreparedStatement stUpdate = conn.prepareStatement(updateQuery);
+
+            stUpdate.executeUpdate();
+            stUpdate.close();
+            System.out.println("Data berhasil dirubah");
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+
+        //  CLEAR TABLE
+        DefaultTableModel dm = (DefaultTableModel) jTable2.getModel();
+        dm.getDataVector().removeAllElements();
+        revalidate();
+
+        //  TAMPIL DATA
+        tampilanDataMember();
+
+        jDialog1.dispose();
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,6 +653,7 @@ public class Member extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alamat;
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton cari;
     private javax.swing.JButton delete;
     private javax.swing.JButton edit;
@@ -412,18 +664,29 @@ public class Member extends javax.swing.JFrame {
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputNama;
     private javax.swing.JTextField inputNomer;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel nama;
-    private javax.swing.JLabel noTelp;
+    private javax.swing.JLabel noHP;
     private javax.swing.JButton refresh;
     private javax.swing.JButton save;
+    private javax.swing.JTextField txtAlamat;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtNama;
+    private javax.swing.JTextField txtNoHP;
     // End of variables declaration//GEN-END:variables
 }

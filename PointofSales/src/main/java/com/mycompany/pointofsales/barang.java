@@ -128,7 +128,8 @@ public class barang extends javax.swing.JFrame {
 
         jLabel7.setText("jumlah barang");
 
-        btnSave.setBackground(new java.awt.Color(0, 204, 255));
+        btnSave.setBackground(new java.awt.Color(153, 204, 255));
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floppy-disk-save.png"))); // NOI18N
         btnSave.setText("save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +182,7 @@ public class barang extends javax.swing.JFrame {
                     .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSave)
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
