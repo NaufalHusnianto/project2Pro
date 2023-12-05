@@ -581,6 +581,7 @@ public class Member extends javax.swing.JFrame {
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // EXIT DATA MEMBER
         new dasboard().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_exitActionPerformed
 
     private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
