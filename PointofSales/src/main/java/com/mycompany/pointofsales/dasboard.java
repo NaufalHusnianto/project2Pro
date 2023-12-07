@@ -254,6 +254,9 @@ public class dasboard extends javax.swing.JFrame {
 
     private void riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riwayatActionPerformed
         // TODO add your handling code here:
+        new RiwayatTransaksi().setVisible(true);
+        setLocationRelativeTo(this);
+        this.dispose();
     }//GEN-LAST:event_riwayatActionPerformed
 
     /**
