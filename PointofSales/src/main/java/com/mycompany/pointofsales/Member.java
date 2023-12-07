@@ -387,7 +387,6 @@ public class Member extends javax.swing.JFrame {
         delete.setBackground(new java.awt.Color(219, 234, 255));
         delete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         delete.setForeground(new java.awt.Color(51, 51, 51));
-        delete.setIcon(new javax.swing.ImageIcon("E:\\SEMESTER 3\\PRAKTIKUM PEMROGRAMAN\\Elements_Java\\bin-1.png")); // NOI18N
         delete.setText("Delete");
         delete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -399,7 +398,6 @@ public class Member extends javax.swing.JFrame {
         edit.setBackground(new java.awt.Color(219, 234, 255));
         edit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         edit.setForeground(new java.awt.Color(51, 51, 51));
-        edit.setIcon(new javax.swing.ImageIcon("E:\\SEMESTER 3\\PRAKTIKUM PEMROGRAMAN\\Elements_Java\\grid-edit.png")); // NOI18N
         edit.setText("Edit");
         edit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         edit.addActionListener(new java.awt.event.ActionListener() {

@@ -30,10 +30,7 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
-        jLabel242 = new javax.swing.JLabel();
-        jLabel243 = new javax.swing.JLabel();
         jLabel244 = new javax.swing.JLabel();
-        jLabel245 = new javax.swing.JLabel();
         jLabel246 = new javax.swing.JLabel();
         jLabel247 = new javax.swing.JLabel();
         jLabel248 = new javax.swing.JLabel();
@@ -41,20 +38,22 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel250 = new javax.swing.JLabel();
         jLabel251 = new javax.swing.JLabel();
         jLabel252 = new javax.swing.JLabel();
-        jLabel253 = new javax.swing.JLabel();
-        txtNoTransaksi20 = new javax.swing.JTextField();
-        txtTanggal20 = new javax.swing.JTextField();
-        txtID20 = new javax.swing.JTextField();
-        txtNama20 = new javax.swing.JTextField();
-        opsiStatusMember20 = new javax.swing.JRadioButton();
-        opsiStatusNonmember20 = new javax.swing.JRadioButton();
-        txtNamaBarang20 = new javax.swing.JTextField();
-        txtJumlah20 = new javax.swing.JTextField();
+        inputNoTransaksi = new javax.swing.JTextField();
+        opsiMember = new javax.swing.JRadioButton();
+        opsiNonMember = new javax.swing.JRadioButton();
+        inputNamaBarang = new javax.swing.JTextField();
+        inputJumlahBarang = new javax.swing.JTextField();
         txtHargaSD21 = new javax.swing.JTextField();
         txtPembayaran20 = new javax.swing.JTextField();
         txtKembali20 = new javax.swing.JTextField();
-        txtHarga20 = new javax.swing.JTextField();
         txtTotal20 = new javax.swing.JTextField();
+        inputIdPembeli = new javax.swing.JTextField();
+        jLabel243 = new javax.swing.JLabel();
+        jLabel253 = new javax.swing.JLabel();
+        inputNamaPembeli = new javax.swing.JTextField();
+        save1 = new javax.swing.JButton();
+        jLabel254 = new javax.swing.JLabel();
+        inputNamaBarang1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel266 = new javax.swing.JLabel();
         inputCari = new javax.swing.JTextField();
@@ -100,17 +99,8 @@ public class Transaksi extends javax.swing.JFrame {
         jPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 204, 255))); // NOI18N
         jPanel25.setForeground(new java.awt.Color(153, 204, 255));
 
-        jLabel242.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel242.setText("Tanggal");
-
-        jLabel243.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel243.setText("ID Pembeli");
-
         jLabel244.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel244.setText("Jumlah");
-
-        jLabel245.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel245.setText("Harga");
 
         jLabel246.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel246.setText("Total");
@@ -133,85 +123,32 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel252.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel252.setText("Pembayaran");
 
+        opsiMember.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        opsiMember.setText("Member");
+
+        opsiNonMember.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        opsiNonMember.setText("Non Member");
+
+        txtHargaSD21.setEditable(false);
+
+        txtKembali20.setEditable(false);
+
+        txtTotal20.setEditable(false);
+
+        jLabel243.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel243.setText("ID Pembeli");
+
         jLabel253.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel253.setText("Nama Pembeli");
 
-        txtNoTransaksi20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNoTransaksiActionPerformed(evt);
-            }
-        });
+        save1.setBackground(new java.awt.Color(0, 0, 0));
+        save1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        save1.setForeground(new java.awt.Color(255, 255, 255));
+        save1.setText("Input Barang");
+        save1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        txtTanggal20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTanggalActionPerformed(evt);
-            }
-        });
-
-        txtID20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
-            }
-        });
-
-        txtNama20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNamaActionPerformed(evt);
-            }
-        });
-
-        opsiStatusMember20.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        opsiStatusMember20.setText("Member");
-        opsiStatusMember20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opsiStatusMemberActionPerformed(evt);
-            }
-        });
-
-        opsiStatusNonmember20.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        opsiStatusNonmember20.setText("Non Member");
-
-        txtNamaBarang20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNamaBarangActionPerformed(evt);
-            }
-        });
-
-        txtJumlah20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJumlahActionPerformed(evt);
-            }
-        });
-
-        txtHargaSD21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHargaSD1ActionPerformed(evt);
-            }
-        });
-
-        txtPembayaran20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPembayaranActionPerformed(evt);
-            }
-        });
-
-        txtKembali20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKembaliActionPerformed(evt);
-            }
-        });
-
-        txtHarga20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHargaActionPerformed(evt);
-            }
-        });
-
-        txtTotal20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTotalActionPerformed(evt);
-            }
-        });
+        jLabel254.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel254.setText("Kode Barang");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -219,51 +156,56 @@ public class Transaksi extends javax.swing.JFrame {
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel247, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtKembali20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel252, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPembayaran20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel251)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtHargaSD21, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel246)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtTotal20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel245)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtHarga20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addComponent(jLabel244)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtJumlah20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel248)
-                            .addComponent(jLabel242)
                             .addComponent(jLabel243)
-                            .addComponent(jLabel253)
-                            .addComponent(jLabel249)
-                            .addComponent(jLabel250))
+                            .addComponent(jLabel253))
                         .addGap(87, 87, 87)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNama20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTanggal20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNoTransaksi20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtID20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtNamaBarang20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel25Layout.createSequentialGroup()
-                                    .addComponent(opsiStatusMember20, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(opsiStatusNonmember20, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(inputNamaPembeli, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputIdPembeli, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel249)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(opsiMember, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(opsiNonMember, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel248)
+                            .addGap(94, 94, 94)
+                            .addComponent(inputNoTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel254)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputNamaBarang1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel247, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtKembali20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel252, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPembayaran20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel251)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtHargaSD21, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel246)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTotal20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel244)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputJumlahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
+                            .addComponent(jLabel250)
+                            .addGap(91, 91, 91)
+                            .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 32, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
@@ -272,37 +214,35 @@ public class Transaksi extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel248)
-                    .addComponent(txtNoTransaksi20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel242)
-                    .addComponent(txtTanggal20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel243)
-                    .addComponent(txtID20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel253)
-                    .addComponent(txtNama20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNoTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel249)
-                    .addComponent(opsiStatusMember20)
-                    .addComponent(opsiStatusNonmember20))
+                    .addComponent(opsiMember)
+                    .addComponent(opsiNonMember))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel243)
+                    .addComponent(inputIdPembeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel253)
+                    .addComponent(inputNamaPembeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel254)
+                    .addComponent(inputNamaBarang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel250)
-                    .addComponent(txtNamaBarang20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel244)
-                    .addComponent(txtJumlah20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputJumlahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel245)
-                    .addComponent(txtHarga20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel246)
                     .addComponent(txtTotal20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -318,7 +258,7 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel247)
                     .addComponent(txtKembali20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -328,47 +268,36 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel266.setForeground(new java.awt.Color(51, 51, 51));
         jLabel266.setText("Data Transaksi");
 
-        inputCari.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputCariActionPerformed(evt);
-            }
-        });
-
         cari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search-alternate.png"))); // NOI18N
-        cari.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cariActionPerformed(evt);
-            }
-        });
 
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "No Transaksi", "Tanggal", "ID Pembeli", "Nama Pembeli", "Status", "Nama Barang", "Jumlah", "Harga", "Total", "TotalSD"
+                "Nama Barang", "Jumlah", "Harga", "Total", "TotalSD"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -408,11 +337,6 @@ public class Transaksi extends javax.swing.JFrame {
         save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floppy-disk-save.png"))); // NOI18N
         save.setText("Save");
         save.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        save.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveActionPerformed(evt);
-            }
-        });
 
         refresh.setBackground(new java.awt.Color(219, 234, 255));
         refresh.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -420,11 +344,6 @@ public class Transaksi extends javax.swing.JFrame {
         refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/synchronize-arrows-1.png"))); // NOI18N
         refresh.setText("Refresh");
         refresh.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        refresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshActionPerformed(evt);
-            }
-        });
 
         edit.setBackground(new java.awt.Color(219, 234, 255));
         edit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -432,11 +351,6 @@ public class Transaksi extends javax.swing.JFrame {
         edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/content-files-note.png"))); // NOI18N
         edit.setText("Cetak Struk");
         edit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editActionPerformed(evt);
-            }
-        });
 
         delete.setBackground(new java.awt.Color(219, 234, 255));
         delete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -444,11 +358,6 @@ public class Transaksi extends javax.swing.JFrame {
         delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bin-1.png"))); // NOI18N
         delete.setText("Delete");
         delete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
-            }
-        });
 
         exit.setBackground(new java.awt.Color(255, 51, 51));
         exit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -472,36 +381,34 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
+                        .addGap(33, 33, 33)
                         .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(44, 44, 44)
+                        .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
                         .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(17, Short.MAX_VALUE))))
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -525,83 +432,11 @@ public class Transaksi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveActionPerformed
-
-    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_editActionPerformed
-
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteActionPerformed
-
-    private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cariActionPerformed
-
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
         new dasboard().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_exitActionPerformed
-
-    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_refreshActionPerformed
-
-    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTotalActionPerformed
-
-    private void txtHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHargaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHargaActionPerformed
-
-    private void txtKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKembaliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtKembaliActionPerformed
-
-    private void txtPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPembayaranActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPembayaranActionPerformed
-
-    private void txtHargaSD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHargaSD1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHargaSD1ActionPerformed
-
-    private void txtJumlahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJumlahActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtJumlahActionPerformed
-
-    private void txtNamaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaBarangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNamaBarangActionPerformed
-
-    private void opsiStatusMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opsiStatusMemberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opsiStatusMemberActionPerformed
-
-    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNamaActionPerformed
-
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
-    private void txtTanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTanggalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTanggalActionPerformed
-
-    private void txtNoTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoTransaksiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNoTransaksiActionPerformed
-
-    private void inputCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCariActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputCariActionPerformed
 
     /**
      * @param args the command line arguments
@@ -644,586 +479,39 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JButton edit;
     private javax.swing.JButton exit;
     private javax.swing.JTextField inputCari;
+    private javax.swing.JTextField inputIdPembeli;
+    private javax.swing.JTextField inputJumlahBarang;
+    private javax.swing.JTextField inputNamaBarang;
+    private javax.swing.JTextField inputNamaBarang1;
+    private javax.swing.JTextField inputNamaPembeli;
+    private javax.swing.JTextField inputNoTransaksi;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
-    private javax.swing.JLabel jLabel104;
-    private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
-    private javax.swing.JLabel jLabel109;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel110;
-    private javax.swing.JLabel jLabel111;
-    private javax.swing.JLabel jLabel112;
-    private javax.swing.JLabel jLabel113;
-    private javax.swing.JLabel jLabel114;
-    private javax.swing.JLabel jLabel115;
-    private javax.swing.JLabel jLabel116;
-    private javax.swing.JLabel jLabel117;
-    private javax.swing.JLabel jLabel118;
-    private javax.swing.JLabel jLabel119;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
-    private javax.swing.JLabel jLabel122;
-    private javax.swing.JLabel jLabel123;
-    private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
-    private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
-    private javax.swing.JLabel jLabel139;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel140;
-    private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel142;
-    private javax.swing.JLabel jLabel143;
-    private javax.swing.JLabel jLabel144;
-    private javax.swing.JLabel jLabel145;
-    private javax.swing.JLabel jLabel146;
-    private javax.swing.JLabel jLabel147;
-    private javax.swing.JLabel jLabel148;
-    private javax.swing.JLabel jLabel149;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel150;
-    private javax.swing.JLabel jLabel151;
-    private javax.swing.JLabel jLabel152;
-    private javax.swing.JLabel jLabel153;
-    private javax.swing.JLabel jLabel154;
-    private javax.swing.JLabel jLabel155;
-    private javax.swing.JLabel jLabel156;
-    private javax.swing.JLabel jLabel157;
-    private javax.swing.JLabel jLabel158;
-    private javax.swing.JLabel jLabel159;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel160;
-    private javax.swing.JLabel jLabel161;
-    private javax.swing.JLabel jLabel162;
-    private javax.swing.JLabel jLabel163;
-    private javax.swing.JLabel jLabel164;
-    private javax.swing.JLabel jLabel165;
-    private javax.swing.JLabel jLabel166;
-    private javax.swing.JLabel jLabel167;
-    private javax.swing.JLabel jLabel168;
-    private javax.swing.JLabel jLabel169;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel170;
-    private javax.swing.JLabel jLabel171;
-    private javax.swing.JLabel jLabel172;
-    private javax.swing.JLabel jLabel173;
-    private javax.swing.JLabel jLabel174;
-    private javax.swing.JLabel jLabel175;
-    private javax.swing.JLabel jLabel176;
-    private javax.swing.JLabel jLabel177;
-    private javax.swing.JLabel jLabel178;
-    private javax.swing.JLabel jLabel179;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel180;
-    private javax.swing.JLabel jLabel181;
-    private javax.swing.JLabel jLabel182;
-    private javax.swing.JLabel jLabel183;
-    private javax.swing.JLabel jLabel184;
-    private javax.swing.JLabel jLabel185;
-    private javax.swing.JLabel jLabel186;
-    private javax.swing.JLabel jLabel187;
-    private javax.swing.JLabel jLabel188;
-    private javax.swing.JLabel jLabel189;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel190;
-    private javax.swing.JLabel jLabel191;
-    private javax.swing.JLabel jLabel192;
-    private javax.swing.JLabel jLabel193;
-    private javax.swing.JLabel jLabel194;
-    private javax.swing.JLabel jLabel195;
-    private javax.swing.JLabel jLabel196;
-    private javax.swing.JLabel jLabel197;
-    private javax.swing.JLabel jLabel198;
-    private javax.swing.JLabel jLabel199;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel200;
-    private javax.swing.JLabel jLabel201;
-    private javax.swing.JLabel jLabel202;
-    private javax.swing.JLabel jLabel203;
-    private javax.swing.JLabel jLabel204;
-    private javax.swing.JLabel jLabel205;
-    private javax.swing.JLabel jLabel206;
-    private javax.swing.JLabel jLabel207;
-    private javax.swing.JLabel jLabel208;
-    private javax.swing.JLabel jLabel209;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel210;
-    private javax.swing.JLabel jLabel211;
-    private javax.swing.JLabel jLabel212;
-    private javax.swing.JLabel jLabel213;
-    private javax.swing.JLabel jLabel214;
-    private javax.swing.JLabel jLabel215;
-    private javax.swing.JLabel jLabel216;
-    private javax.swing.JLabel jLabel217;
-    private javax.swing.JLabel jLabel218;
-    private javax.swing.JLabel jLabel219;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel220;
-    private javax.swing.JLabel jLabel221;
-    private javax.swing.JLabel jLabel222;
-    private javax.swing.JLabel jLabel223;
-    private javax.swing.JLabel jLabel224;
-    private javax.swing.JLabel jLabel225;
-    private javax.swing.JLabel jLabel226;
-    private javax.swing.JLabel jLabel227;
-    private javax.swing.JLabel jLabel228;
-    private javax.swing.JLabel jLabel229;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel230;
-    private javax.swing.JLabel jLabel231;
-    private javax.swing.JLabel jLabel232;
-    private javax.swing.JLabel jLabel233;
-    private javax.swing.JLabel jLabel234;
-    private javax.swing.JLabel jLabel235;
-    private javax.swing.JLabel jLabel236;
-    private javax.swing.JLabel jLabel237;
-    private javax.swing.JLabel jLabel238;
-    private javax.swing.JLabel jLabel239;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel240;
-    private javax.swing.JLabel jLabel241;
-    private javax.swing.JLabel jLabel242;
     private javax.swing.JLabel jLabel243;
     private javax.swing.JLabel jLabel244;
-    private javax.swing.JLabel jLabel245;
     private javax.swing.JLabel jLabel246;
     private javax.swing.JLabel jLabel247;
     private javax.swing.JLabel jLabel248;
     private javax.swing.JLabel jLabel249;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel250;
     private javax.swing.JLabel jLabel251;
     private javax.swing.JLabel jLabel252;
     private javax.swing.JLabel jLabel253;
     private javax.swing.JLabel jLabel254;
-    private javax.swing.JLabel jLabel255;
-    private javax.swing.JLabel jLabel256;
-    private javax.swing.JLabel jLabel257;
-    private javax.swing.JLabel jLabel258;
-    private javax.swing.JLabel jLabel259;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel260;
-    private javax.swing.JLabel jLabel261;
-    private javax.swing.JLabel jLabel262;
-    private javax.swing.JLabel jLabel263;
-    private javax.swing.JLabel jLabel264;
-    private javax.swing.JLabel jLabel265;
     private javax.swing.JLabel jLabel266;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JRadioButton opsiStatusMember;
-    private javax.swing.JRadioButton opsiStatusMember1;
-    private javax.swing.JRadioButton opsiStatusMember10;
-    private javax.swing.JRadioButton opsiStatusMember11;
-    private javax.swing.JRadioButton opsiStatusMember12;
-    private javax.swing.JRadioButton opsiStatusMember13;
-    private javax.swing.JRadioButton opsiStatusMember14;
-    private javax.swing.JRadioButton opsiStatusMember15;
-    private javax.swing.JRadioButton opsiStatusMember16;
-    private javax.swing.JRadioButton opsiStatusMember17;
-    private javax.swing.JRadioButton opsiStatusMember18;
-    private javax.swing.JRadioButton opsiStatusMember19;
-    private javax.swing.JRadioButton opsiStatusMember2;
-    private javax.swing.JRadioButton opsiStatusMember20;
-    private javax.swing.JRadioButton opsiStatusMember21;
-    private javax.swing.JRadioButton opsiStatusMember3;
-    private javax.swing.JRadioButton opsiStatusMember4;
-    private javax.swing.JRadioButton opsiStatusMember5;
-    private javax.swing.JRadioButton opsiStatusMember6;
-    private javax.swing.JRadioButton opsiStatusMember7;
-    private javax.swing.JRadioButton opsiStatusMember8;
-    private javax.swing.JRadioButton opsiStatusMember9;
-    private javax.swing.JRadioButton opsiStatusNonmember;
-    private javax.swing.JRadioButton opsiStatusNonmember1;
-    private javax.swing.JRadioButton opsiStatusNonmember10;
-    private javax.swing.JRadioButton opsiStatusNonmember11;
-    private javax.swing.JRadioButton opsiStatusNonmember12;
-    private javax.swing.JRadioButton opsiStatusNonmember13;
-    private javax.swing.JRadioButton opsiStatusNonmember14;
-    private javax.swing.JRadioButton opsiStatusNonmember15;
-    private javax.swing.JRadioButton opsiStatusNonmember16;
-    private javax.swing.JRadioButton opsiStatusNonmember17;
-    private javax.swing.JRadioButton opsiStatusNonmember18;
-    private javax.swing.JRadioButton opsiStatusNonmember19;
-    private javax.swing.JRadioButton opsiStatusNonmember2;
-    private javax.swing.JRadioButton opsiStatusNonmember20;
-    private javax.swing.JRadioButton opsiStatusNonmember21;
-    private javax.swing.JRadioButton opsiStatusNonmember3;
-    private javax.swing.JRadioButton opsiStatusNonmember4;
-    private javax.swing.JRadioButton opsiStatusNonmember5;
-    private javax.swing.JRadioButton opsiStatusNonmember6;
-    private javax.swing.JRadioButton opsiStatusNonmember7;
-    private javax.swing.JRadioButton opsiStatusNonmember8;
-    private javax.swing.JRadioButton opsiStatusNonmember9;
+    private javax.swing.JRadioButton opsiMember;
+    private javax.swing.JRadioButton opsiNonMember;
     private javax.swing.JButton refresh;
     private javax.swing.JButton save;
-    private javax.swing.JTextField txtHarga;
-    private javax.swing.JTextField txtHarga1;
-    private javax.swing.JTextField txtHarga10;
-    private javax.swing.JTextField txtHarga11;
-    private javax.swing.JTextField txtHarga12;
-    private javax.swing.JTextField txtHarga13;
-    private javax.swing.JTextField txtHarga14;
-    private javax.swing.JTextField txtHarga15;
-    private javax.swing.JTextField txtHarga16;
-    private javax.swing.JTextField txtHarga17;
-    private javax.swing.JTextField txtHarga18;
-    private javax.swing.JTextField txtHarga19;
-    private javax.swing.JTextField txtHarga2;
-    private javax.swing.JTextField txtHarga20;
-    private javax.swing.JTextField txtHarga21;
-    private javax.swing.JTextField txtHarga3;
-    private javax.swing.JTextField txtHarga4;
-    private javax.swing.JTextField txtHarga5;
-    private javax.swing.JTextField txtHarga6;
-    private javax.swing.JTextField txtHarga7;
-    private javax.swing.JTextField txtHarga8;
-    private javax.swing.JTextField txtHarga9;
-    private javax.swing.JTextField txtHargaSD1;
-    private javax.swing.JTextField txtHargaSD10;
-    private javax.swing.JTextField txtHargaSD11;
-    private javax.swing.JTextField txtHargaSD12;
-    private javax.swing.JTextField txtHargaSD13;
-    private javax.swing.JTextField txtHargaSD14;
-    private javax.swing.JTextField txtHargaSD15;
-    private javax.swing.JTextField txtHargaSD16;
-    private javax.swing.JTextField txtHargaSD17;
-    private javax.swing.JTextField txtHargaSD18;
-    private javax.swing.JTextField txtHargaSD19;
-    private javax.swing.JTextField txtHargaSD2;
-    private javax.swing.JTextField txtHargaSD20;
+    private javax.swing.JButton save1;
     private javax.swing.JTextField txtHargaSD21;
-    private javax.swing.JTextField txtHargaSD22;
-    private javax.swing.JTextField txtHargaSD3;
-    private javax.swing.JTextField txtHargaSD4;
-    private javax.swing.JTextField txtHargaSD5;
-    private javax.swing.JTextField txtHargaSD6;
-    private javax.swing.JTextField txtHargaSD7;
-    private javax.swing.JTextField txtHargaSD8;
-    private javax.swing.JTextField txtHargaSD9;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtID1;
-    private javax.swing.JTextField txtID10;
-    private javax.swing.JTextField txtID11;
-    private javax.swing.JTextField txtID12;
-    private javax.swing.JTextField txtID13;
-    private javax.swing.JTextField txtID14;
-    private javax.swing.JTextField txtID15;
-    private javax.swing.JTextField txtID16;
-    private javax.swing.JTextField txtID17;
-    private javax.swing.JTextField txtID18;
-    private javax.swing.JTextField txtID19;
-    private javax.swing.JTextField txtID2;
-    private javax.swing.JTextField txtID20;
-    private javax.swing.JTextField txtID21;
-    private javax.swing.JTextField txtID3;
-    private javax.swing.JTextField txtID4;
-    private javax.swing.JTextField txtID5;
-    private javax.swing.JTextField txtID6;
-    private javax.swing.JTextField txtID7;
-    private javax.swing.JTextField txtID8;
-    private javax.swing.JTextField txtID9;
-    private javax.swing.JTextField txtJumlah;
-    private javax.swing.JTextField txtJumlah1;
-    private javax.swing.JTextField txtJumlah10;
-    private javax.swing.JTextField txtJumlah11;
-    private javax.swing.JTextField txtJumlah12;
-    private javax.swing.JTextField txtJumlah13;
-    private javax.swing.JTextField txtJumlah14;
-    private javax.swing.JTextField txtJumlah15;
-    private javax.swing.JTextField txtJumlah16;
-    private javax.swing.JTextField txtJumlah17;
-    private javax.swing.JTextField txtJumlah18;
-    private javax.swing.JTextField txtJumlah19;
-    private javax.swing.JTextField txtJumlah2;
-    private javax.swing.JTextField txtJumlah20;
-    private javax.swing.JTextField txtJumlah21;
-    private javax.swing.JTextField txtJumlah3;
-    private javax.swing.JTextField txtJumlah4;
-    private javax.swing.JTextField txtJumlah5;
-    private javax.swing.JTextField txtJumlah6;
-    private javax.swing.JTextField txtJumlah7;
-    private javax.swing.JTextField txtJumlah8;
-    private javax.swing.JTextField txtJumlah9;
-    private javax.swing.JTextField txtKembali;
-    private javax.swing.JTextField txtKembali1;
-    private javax.swing.JTextField txtKembali10;
-    private javax.swing.JTextField txtKembali11;
-    private javax.swing.JTextField txtKembali12;
-    private javax.swing.JTextField txtKembali13;
-    private javax.swing.JTextField txtKembali14;
-    private javax.swing.JTextField txtKembali15;
-    private javax.swing.JTextField txtKembali16;
-    private javax.swing.JTextField txtKembali17;
-    private javax.swing.JTextField txtKembali18;
-    private javax.swing.JTextField txtKembali19;
-    private javax.swing.JTextField txtKembali2;
     private javax.swing.JTextField txtKembali20;
-    private javax.swing.JTextField txtKembali21;
-    private javax.swing.JTextField txtKembali3;
-    private javax.swing.JTextField txtKembali4;
-    private javax.swing.JTextField txtKembali5;
-    private javax.swing.JTextField txtKembali6;
-    private javax.swing.JTextField txtKembali7;
-    private javax.swing.JTextField txtKembali8;
-    private javax.swing.JTextField txtKembali9;
-    private javax.swing.JTextField txtNama;
-    private javax.swing.JTextField txtNama1;
-    private javax.swing.JTextField txtNama10;
-    private javax.swing.JTextField txtNama11;
-    private javax.swing.JTextField txtNama12;
-    private javax.swing.JTextField txtNama13;
-    private javax.swing.JTextField txtNama14;
-    private javax.swing.JTextField txtNama15;
-    private javax.swing.JTextField txtNama16;
-    private javax.swing.JTextField txtNama17;
-    private javax.swing.JTextField txtNama18;
-    private javax.swing.JTextField txtNama19;
-    private javax.swing.JTextField txtNama2;
-    private javax.swing.JTextField txtNama20;
-    private javax.swing.JTextField txtNama21;
-    private javax.swing.JTextField txtNama3;
-    private javax.swing.JTextField txtNama4;
-    private javax.swing.JTextField txtNama5;
-    private javax.swing.JTextField txtNama6;
-    private javax.swing.JTextField txtNama7;
-    private javax.swing.JTextField txtNama8;
-    private javax.swing.JTextField txtNama9;
-    private javax.swing.JTextField txtNamaBarang;
-    private javax.swing.JTextField txtNamaBarang1;
-    private javax.swing.JTextField txtNamaBarang10;
-    private javax.swing.JTextField txtNamaBarang11;
-    private javax.swing.JTextField txtNamaBarang12;
-    private javax.swing.JTextField txtNamaBarang13;
-    private javax.swing.JTextField txtNamaBarang14;
-    private javax.swing.JTextField txtNamaBarang15;
-    private javax.swing.JTextField txtNamaBarang16;
-    private javax.swing.JTextField txtNamaBarang17;
-    private javax.swing.JTextField txtNamaBarang18;
-    private javax.swing.JTextField txtNamaBarang19;
-    private javax.swing.JTextField txtNamaBarang2;
-    private javax.swing.JTextField txtNamaBarang20;
-    private javax.swing.JTextField txtNamaBarang21;
-    private javax.swing.JTextField txtNamaBarang3;
-    private javax.swing.JTextField txtNamaBarang4;
-    private javax.swing.JTextField txtNamaBarang5;
-    private javax.swing.JTextField txtNamaBarang6;
-    private javax.swing.JTextField txtNamaBarang7;
-    private javax.swing.JTextField txtNamaBarang8;
-    private javax.swing.JTextField txtNamaBarang9;
-    private javax.swing.JTextField txtNoTransaksi;
-    private javax.swing.JTextField txtNoTransaksi1;
-    private javax.swing.JTextField txtNoTransaksi10;
-    private javax.swing.JTextField txtNoTransaksi11;
-    private javax.swing.JTextField txtNoTransaksi12;
-    private javax.swing.JTextField txtNoTransaksi13;
-    private javax.swing.JTextField txtNoTransaksi14;
-    private javax.swing.JTextField txtNoTransaksi15;
-    private javax.swing.JTextField txtNoTransaksi16;
-    private javax.swing.JTextField txtNoTransaksi17;
-    private javax.swing.JTextField txtNoTransaksi18;
-    private javax.swing.JTextField txtNoTransaksi19;
-    private javax.swing.JTextField txtNoTransaksi2;
-    private javax.swing.JTextField txtNoTransaksi20;
-    private javax.swing.JTextField txtNoTransaksi21;
-    private javax.swing.JTextField txtNoTransaksi3;
-    private javax.swing.JTextField txtNoTransaksi4;
-    private javax.swing.JTextField txtNoTransaksi5;
-    private javax.swing.JTextField txtNoTransaksi6;
-    private javax.swing.JTextField txtNoTransaksi7;
-    private javax.swing.JTextField txtNoTransaksi8;
-    private javax.swing.JTextField txtNoTransaksi9;
-    private javax.swing.JTextField txtPembayaran;
-    private javax.swing.JTextField txtPembayaran1;
-    private javax.swing.JTextField txtPembayaran10;
-    private javax.swing.JTextField txtPembayaran11;
-    private javax.swing.JTextField txtPembayaran12;
-    private javax.swing.JTextField txtPembayaran13;
-    private javax.swing.JTextField txtPembayaran14;
-    private javax.swing.JTextField txtPembayaran15;
-    private javax.swing.JTextField txtPembayaran16;
-    private javax.swing.JTextField txtPembayaran17;
-    private javax.swing.JTextField txtPembayaran18;
-    private javax.swing.JTextField txtPembayaran19;
-    private javax.swing.JTextField txtPembayaran2;
     private javax.swing.JTextField txtPembayaran20;
-    private javax.swing.JTextField txtPembayaran21;
-    private javax.swing.JTextField txtPembayaran3;
-    private javax.swing.JTextField txtPembayaran4;
-    private javax.swing.JTextField txtPembayaran5;
-    private javax.swing.JTextField txtPembayaran6;
-    private javax.swing.JTextField txtPembayaran7;
-    private javax.swing.JTextField txtPembayaran8;
-    private javax.swing.JTextField txtPembayaran9;
-    private javax.swing.JTextField txtTanggal;
-    private javax.swing.JTextField txtTanggal1;
-    private javax.swing.JTextField txtTanggal10;
-    private javax.swing.JTextField txtTanggal11;
-    private javax.swing.JTextField txtTanggal12;
-    private javax.swing.JTextField txtTanggal13;
-    private javax.swing.JTextField txtTanggal14;
-    private javax.swing.JTextField txtTanggal15;
-    private javax.swing.JTextField txtTanggal16;
-    private javax.swing.JTextField txtTanggal17;
-    private javax.swing.JTextField txtTanggal18;
-    private javax.swing.JTextField txtTanggal19;
-    private javax.swing.JTextField txtTanggal2;
-    private javax.swing.JTextField txtTanggal20;
-    private javax.swing.JTextField txtTanggal21;
-    private javax.swing.JTextField txtTanggal3;
-    private javax.swing.JTextField txtTanggal4;
-    private javax.swing.JTextField txtTanggal5;
-    private javax.swing.JTextField txtTanggal6;
-    private javax.swing.JTextField txtTanggal7;
-    private javax.swing.JTextField txtTanggal8;
-    private javax.swing.JTextField txtTanggal9;
-    private javax.swing.JTextField txtTotal;
-    private javax.swing.JTextField txtTotal1;
-    private javax.swing.JTextField txtTotal10;
-    private javax.swing.JTextField txtTotal11;
-    private javax.swing.JTextField txtTotal12;
-    private javax.swing.JTextField txtTotal13;
-    private javax.swing.JTextField txtTotal14;
-    private javax.swing.JTextField txtTotal15;
-    private javax.swing.JTextField txtTotal16;
-    private javax.swing.JTextField txtTotal17;
-    private javax.swing.JTextField txtTotal18;
-    private javax.swing.JTextField txtTotal19;
-    private javax.swing.JTextField txtTotal2;
     private javax.swing.JTextField txtTotal20;
-    private javax.swing.JTextField txtTotal21;
-    private javax.swing.JTextField txtTotal3;
-    private javax.swing.JTextField txtTotal4;
-    private javax.swing.JTextField txtTotal5;
-    private javax.swing.JTextField txtTotal6;
-    private javax.swing.JTextField txtTotal7;
-    private javax.swing.JTextField txtTotal8;
-    private javax.swing.JTextField txtTotal9;
     // End of variables declaration//GEN-END:variables
 }
