@@ -103,15 +103,15 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="save" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="btnSaveTransaksi" min="-2" pref="93" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="edit" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="btnCetakStruk" min="-2" pref="93" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="refresh" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="btnRefresh" min="-2" pref="93" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="delete" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="btnDelete" min="-2" pref="93" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="exit" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="btnExit" min="-2" pref="93" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -129,11 +129,11 @@
                           <Component id="jPanel3" min="-2" pref="356" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="save" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="refresh" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="delete" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="exit" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="edit" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnSaveTransaksi" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnRefresh" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnDelete" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnExit" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnCetakStruk" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -166,7 +166,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="save1" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="btnInputBarang" min="-2" pref="93" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel243" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -196,27 +196,27 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel254" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="inputNamaBarang1" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="inputKodeBarang" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel247" min="-2" pref="84" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtKembali20" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="kembalian" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel252" min="-2" pref="84" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtPembayaran20" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="inputPembayaran" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel251" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtHargaSD21" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="totalHargaAkhir" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel246" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtTotal20" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="totalHarga" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel244" min="-2" max="-2" attributes="0"/>
@@ -261,7 +261,7 @@
                       <EmptySpace pref="20" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel254" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputNamaBarang1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputKodeBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -274,26 +274,26 @@
                           <Component id="inputJumlahBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="save1" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnInputBarang" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel246" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtTotal20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="totalHarga" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel251" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtHargaSD21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="totalHargaAkhir" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel252" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtPembayaran20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputPembayaran" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel247" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtKembali20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="kembalian" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
@@ -387,19 +387,19 @@
             </Component>
             <Component class="javax.swing.JTextField" name="inputJumlahBarang">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtHargaSD21">
+            <Component class="javax.swing.JTextField" name="totalHargaAkhir">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtPembayaran20">
+            <Component class="javax.swing.JTextField" name="inputPembayaran">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtKembali20">
+            <Component class="javax.swing.JTextField" name="kembalian">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtTotal20">
+            <Component class="javax.swing.JTextField" name="totalHarga">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
@@ -424,7 +424,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="inputNamaPembeli">
             </Component>
-            <Component class="javax.swing.JButton" name="save1">
+            <Component class="javax.swing.JButton" name="btnInputBarang">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -451,7 +451,7 @@
                 <Property name="text" type="java.lang.String" value="Kode Barang"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="inputNamaBarang1">
+            <Component class="javax.swing.JTextField" name="inputKodeBarang">
             </Component>
           </SubComponents>
         </Container>
@@ -477,7 +477,7 @@
                           <Group type="102" attributes="0">
                               <Component id="inputCari" min="-2" pref="344" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="cari" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCari" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" min="-2" pref="613" max="-2" attributes="0"/>
                       </Group>
@@ -493,7 +493,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="inputCari" max="32767" attributes="0"/>
-                          <Component id="cari" max="32767" attributes="0"/>
+                          <Component id="btnCari" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="227" max="-2" attributes="0"/>
@@ -516,7 +516,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="inputCari">
             </Component>
-            <Component class="javax.swing.JButton" name="cari">
+            <Component class="javax.swing.JButton" name="btnCari">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/image/search-alternate.png"/>
@@ -582,7 +582,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="save">
+        <Component class="javax.swing.JButton" name="btnSaveTransaksi">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ea" red="db" type="rgb"/>
@@ -604,7 +604,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="refresh">
+        <Component class="javax.swing.JButton" name="btnRefresh">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ea" red="db" type="rgb"/>
@@ -626,7 +626,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="edit">
+        <Component class="javax.swing.JButton" name="btnCetakStruk">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ea" red="db" type="rgb"/>
@@ -648,7 +648,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="delete">
+        <Component class="javax.swing.JButton" name="btnDelete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ea" red="db" type="rgb"/>
@@ -670,7 +670,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="exit">
+        <Component class="javax.swing.JButton" name="btnExit">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -692,7 +692,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

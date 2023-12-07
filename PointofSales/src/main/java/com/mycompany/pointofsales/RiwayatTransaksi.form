@@ -29,9 +29,9 @@
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="exit" min="-2" pref="93" max="-2" attributes="0"/>
-                  <Component id="delete" min="-2" pref="93" max="-2" attributes="0"/>
-                  <Component id="refresh" min="-2" pref="93" max="-2" attributes="0"/>
+                  <Component id="btnExit" min="-2" pref="93" max="-2" attributes="0"/>
+                  <Component id="btnDelete" min="-2" pref="93" max="-2" attributes="0"/>
+                  <Component id="btnRefresh" min="-2" pref="93" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
@@ -45,11 +45,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="refresh" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnRefresh" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="delete" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="exit" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnExit" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
@@ -122,7 +122,7 @@
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="inputCari" min="-2" pref="344" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="cari" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnCari" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" alignment="0" min="-2" pref="805" max="-2" attributes="0"/>
                   </Group>
@@ -137,7 +137,7 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel266" min="-2" max="-2" attributes="0"/>
                       <Component id="inputCari" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="cari" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCari" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" pref="338" max="32767" attributes="0"/>
@@ -160,7 +160,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="inputCari">
         </Component>
-        <Component class="javax.swing.JButton" name="cari">
+        <Component class="javax.swing.JButton" name="btnCari">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/image/search-alternate.png"/>
@@ -256,7 +256,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="exit">
+    <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -278,10 +278,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="delete">
+    <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ea" red="db" type="rgb"/>
@@ -303,7 +303,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="refresh">
+    <Component class="javax.swing.JButton" name="btnRefresh">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ea" red="db" type="rgb"/>

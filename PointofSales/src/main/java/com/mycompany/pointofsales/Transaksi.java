@@ -43,28 +43,28 @@ public class Transaksi extends javax.swing.JFrame {
         opsiNonMember = new javax.swing.JRadioButton();
         inputNamaBarang = new javax.swing.JTextField();
         inputJumlahBarang = new javax.swing.JTextField();
-        txtHargaSD21 = new javax.swing.JTextField();
-        txtPembayaran20 = new javax.swing.JTextField();
-        txtKembali20 = new javax.swing.JTextField();
-        txtTotal20 = new javax.swing.JTextField();
+        totalHargaAkhir = new javax.swing.JTextField();
+        inputPembayaran = new javax.swing.JTextField();
+        kembalian = new javax.swing.JTextField();
+        totalHarga = new javax.swing.JTextField();
         inputIdPembeli = new javax.swing.JTextField();
         jLabel243 = new javax.swing.JLabel();
         jLabel253 = new javax.swing.JLabel();
         inputNamaPembeli = new javax.swing.JTextField();
-        save1 = new javax.swing.JButton();
+        btnInputBarang = new javax.swing.JButton();
         jLabel254 = new javax.swing.JLabel();
-        inputNamaBarang1 = new javax.swing.JTextField();
+        inputKodeBarang = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel266 = new javax.swing.JLabel();
         inputCari = new javax.swing.JTextField();
-        cari = new javax.swing.JButton();
+        btnCari = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        save = new javax.swing.JButton();
-        refresh = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
-        delete = new javax.swing.JButton();
-        exit = new javax.swing.JButton();
+        btnSaveTransaksi = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        btnCetakStruk = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Transaksi");
@@ -129,11 +129,11 @@ public class Transaksi extends javax.swing.JFrame {
         opsiNonMember.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         opsiNonMember.setText("Non Member");
 
-        txtHargaSD21.setEditable(false);
+        totalHargaAkhir.setEditable(false);
 
-        txtKembali20.setEditable(false);
+        kembalian.setEditable(false);
 
-        txtTotal20.setEditable(false);
+        totalHarga.setEditable(false);
 
         jLabel243.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel243.setText("ID Pembeli");
@@ -141,11 +141,11 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel253.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel253.setText("Nama Pembeli");
 
-        save1.setBackground(new java.awt.Color(0, 0, 0));
-        save1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        save1.setForeground(new java.awt.Color(255, 255, 255));
-        save1.setText("Input Barang");
-        save1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnInputBarang.setBackground(new java.awt.Color(0, 0, 0));
+        btnInputBarang.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnInputBarang.setForeground(new java.awt.Color(255, 255, 255));
+        btnInputBarang.setText("Input Barang");
+        btnInputBarang.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel254.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel254.setText("Kode Barang");
@@ -157,7 +157,7 @@ public class Transaksi extends javax.swing.JFrame {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInputBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel243)
@@ -181,23 +181,23 @@ public class Transaksi extends javax.swing.JFrame {
                         .addGroup(jPanel25Layout.createSequentialGroup()
                             .addComponent(jLabel254)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(inputNamaBarang1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
                             .addComponent(jLabel247, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtKembali20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(kembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
                             .addComponent(jLabel252, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPembayaran20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputPembayaran, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
                             .addComponent(jLabel251)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtHargaSD21, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(totalHargaAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
                             .addComponent(jLabel246)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtTotal20, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(totalHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel25Layout.createSequentialGroup()
                             .addComponent(jLabel244)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -231,7 +231,7 @@ public class Transaksi extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel254)
-                    .addComponent(inputNamaBarang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel250)
@@ -241,23 +241,23 @@ public class Transaksi extends javax.swing.JFrame {
                     .addComponent(jLabel244)
                     .addComponent(inputJumlahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnInputBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel246)
-                    .addComponent(txtTotal20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel251)
-                    .addComponent(txtHargaSD21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalHargaAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel252)
-                    .addComponent(txtPembayaran20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputPembayaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel247)
-                    .addComponent(txtKembali20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kembalian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -268,7 +268,7 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel266.setForeground(new java.awt.Color(51, 51, 51));
         jLabel266.setText("Data Transaksi");
 
-        cari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search-alternate.png"))); // NOI18N
+        btnCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search-alternate.png"))); // NOI18N
 
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -313,7 +313,7 @@ public class Transaksi extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(inputCari, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -325,49 +325,49 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inputCari)
-                    .addComponent(cari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91))
         );
 
-        save.setBackground(new java.awt.Color(219, 234, 255));
-        save.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        save.setForeground(new java.awt.Color(51, 51, 51));
-        save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floppy-disk-save.png"))); // NOI18N
-        save.setText("Save");
-        save.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnSaveTransaksi.setBackground(new java.awt.Color(219, 234, 255));
+        btnSaveTransaksi.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnSaveTransaksi.setForeground(new java.awt.Color(51, 51, 51));
+        btnSaveTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floppy-disk-save.png"))); // NOI18N
+        btnSaveTransaksi.setText("Save");
+        btnSaveTransaksi.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        refresh.setBackground(new java.awt.Color(219, 234, 255));
-        refresh.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        refresh.setForeground(new java.awt.Color(51, 51, 51));
-        refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/synchronize-arrows-1.png"))); // NOI18N
-        refresh.setText("Refresh");
-        refresh.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnRefresh.setBackground(new java.awt.Color(219, 234, 255));
+        btnRefresh.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnRefresh.setForeground(new java.awt.Color(51, 51, 51));
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/synchronize-arrows-1.png"))); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        edit.setBackground(new java.awt.Color(219, 234, 255));
-        edit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        edit.setForeground(new java.awt.Color(51, 51, 51));
-        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/content-files-note.png"))); // NOI18N
-        edit.setText("Cetak Struk");
-        edit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnCetakStruk.setBackground(new java.awt.Color(219, 234, 255));
+        btnCetakStruk.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnCetakStruk.setForeground(new java.awt.Color(51, 51, 51));
+        btnCetakStruk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/content-files-note.png"))); // NOI18N
+        btnCetakStruk.setText("Cetak Struk");
+        btnCetakStruk.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        delete.setBackground(new java.awt.Color(219, 234, 255));
-        delete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        delete.setForeground(new java.awt.Color(51, 51, 51));
-        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bin-1.png"))); // NOI18N
-        delete.setText("Delete");
-        delete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnDelete.setBackground(new java.awt.Color(219, 234, 255));
+        btnDelete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(51, 51, 51));
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bin-1.png"))); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        exit.setBackground(new java.awt.Color(255, 51, 51));
-        exit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        exit.setForeground(new java.awt.Color(51, 51, 51));
-        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout-1-alternate.png"))); // NOI18N
-        exit.setText("Exit");
-        exit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        exit.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(255, 51, 51));
+        btnExit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(51, 51, 51));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout-1-alternate.png"))); // NOI18N
+        btnExit.setText("Exit");
+        btnExit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
@@ -381,15 +381,15 @@ public class Transaksi extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSaveTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCetakStruk, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
-                        .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -403,11 +403,11 @@ public class Transaksi extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnSaveTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCetakStruk, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
@@ -432,11 +432,11 @@ public class Transaksi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
         new dasboard().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_exitActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -474,17 +474,21 @@ public class Transaksi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cari;
-    private javax.swing.JButton delete;
-    private javax.swing.JButton edit;
-    private javax.swing.JButton exit;
+    private javax.swing.JButton btnCari;
+    private javax.swing.JButton btnCetakStruk;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnInputBarang;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnSaveTransaksi;
     private javax.swing.JTextField inputCari;
     private javax.swing.JTextField inputIdPembeli;
     private javax.swing.JTextField inputJumlahBarang;
+    private javax.swing.JTextField inputKodeBarang;
     private javax.swing.JTextField inputNamaBarang;
-    private javax.swing.JTextField inputNamaBarang1;
     private javax.swing.JTextField inputNamaPembeli;
     private javax.swing.JTextField inputNoTransaksi;
+    private javax.swing.JTextField inputPembayaran;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel243;
     private javax.swing.JLabel jLabel244;
@@ -504,14 +508,10 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField kembalian;
     private javax.swing.JRadioButton opsiMember;
     private javax.swing.JRadioButton opsiNonMember;
-    private javax.swing.JButton refresh;
-    private javax.swing.JButton save;
-    private javax.swing.JButton save1;
-    private javax.swing.JTextField txtHargaSD21;
-    private javax.swing.JTextField txtKembali20;
-    private javax.swing.JTextField txtPembayaran20;
-    private javax.swing.JTextField txtTotal20;
+    private javax.swing.JTextField totalHarga;
+    private javax.swing.JTextField totalHargaAkhir;
     // End of variables declaration//GEN-END:variables
 }
