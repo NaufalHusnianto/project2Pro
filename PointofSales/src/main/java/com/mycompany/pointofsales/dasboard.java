@@ -19,7 +19,9 @@ public class dasboard extends javax.swing.JFrame {
     public dasboard() {
         initComponents();
         setLocationRelativeTo(this);
-        this.dispose();
+        jDialog1.setVisible(true);
+        jDialog1.setSize(745, 450);
+        jDialog1.setLocationRelativeTo(this);
     }
     
 
@@ -61,11 +63,21 @@ public class dasboard extends javax.swing.JFrame {
         exit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 255, 255));
         exit.setText("EXIT");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
 
         login.setBackground(new java.awt.Color(51, 153, 255));
         login.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("LOGIN");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
 
         password.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         password.setForeground(new java.awt.Color(102, 102, 102));
@@ -259,6 +271,18 @@ public class dasboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_riwayatActionPerformed
 
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        // TODO add your handling code here:
+        jDialog1.dispose();
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+            jDialog1.dispose();
+            new dasboard().setVisible(true);
+            System.out.println("password atau username salahh");
+    }//GEN-LAST:event_loginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,7 +314,7 @@ public class dasboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dasboard().setVisible(true);
+                new dasboard().setVisible(false);
             }
         });
     }
