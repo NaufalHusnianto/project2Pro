@@ -4,6 +4,14 @@
  */
 package com.mycompany.pointofsales;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author user
@@ -15,6 +23,35 @@ public class Transaksi extends javax.swing.JFrame {
      */
     public Transaksi() {
         initComponents();
+    }
+    
+    private void tampildatabarang(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Kode_Barang");
+        model.addColumn("Nama_Barang");
+        model.addColumn("Jumlah");
+        model.addColumn("Harga");
+        model.addColumn("Total_Harga");
+        model.addColumn("Total_Hargasd");
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+            String sql = "SELECT * FROM transaksi";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String kodeBarang = inputKodeBarang.getText();
+                String namaBarang = inputNamaBarang.getText();
+                String jumlah = inputJumlahBarang.getText();
+                
+                model.addRow(new Object[]{kodeBarang, namaBarang, jumlah});
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditampilkan");
+            e.printStackTrace();
+        }
+        jTable1.setModel(model);
     }
 
     /**
@@ -146,6 +183,11 @@ public class Transaksi extends javax.swing.JFrame {
         btnInputBarang.setForeground(new java.awt.Color(255, 255, 255));
         btnInputBarang.setText("Input Barang");
         btnInputBarang.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnInputBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInputBarangActionPerformed(evt);
+            }
+        });
 
         jLabel254.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel254.setText("Kode Barang");
@@ -273,31 +315,31 @@ public class Transaksi extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Nama Barang", "Jumlah", "Harga", "Total", "TotalSD"
+                "Kode Barang", "Nama Barang", "Jumlah", "Harga", "Total", "TotalSD"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -437,6 +479,15 @@ public class Transaksi extends javax.swing.JFrame {
         new dasboard().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnInputBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputBarangActionPerformed
+        // TODO add your handling code here:
+        tampildatabarang();
+        
+        inputKodeBarang.setText("");
+        inputNamaBarang.setText("");
+        inputJumlahBarang.setText("");
+    }//GEN-LAST:event_btnInputBarangActionPerformed
 
     /**
      * @param args the command line arguments

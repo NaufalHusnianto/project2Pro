@@ -280,7 +280,6 @@ public class dasboard extends javax.swing.JFrame {
         // TODO add your handling code here:
             jDialog1.dispose();
             new dasboard().setVisible(true);
-            System.out.println("password atau username salahh");
     }//GEN-LAST:event_loginActionPerformed
 
     /**

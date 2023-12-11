@@ -4,6 +4,14 @@
  */
 package com.mycompany.pointofsales;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author User
@@ -17,6 +25,45 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
     }
+    
+    private void tampildata(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("No_Transaksi");
+        model.addColumn("Tanggal");
+        model.addColumn("Id_Pembeli");
+        model.addColumn("Nama_Pembeli");
+        model.addColumn("Nama_Barang");
+        model.addColumn("Jumlah");
+        model.addColumn("Harga");
+        model.addColumn("Total_Harga");
+        model.addColumn("Total_Harga_Diskon");
+        model.addColumn("Total_Harga_Akhir");
+        
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+            String sql = "SELECT * FROM transaksi";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String nomorTransaksi = rs.getString("no_transaksi");
+                String tanggal = rs.getString("tanggal");
+                String idPembeli = rs.getString("id_pembeli");
+                String namaPembeli = rs.getString("nama_pembeli");
+                String namaBarang = rs.getString("nama_barang");
+                int jumlah = rs.getInt("jumlah");
+                int harga = rs.getInt("harga");
+                int totalHarga = jumlah * harga;
+                
+                model.addRow(new Object[]{nomorTransaksi, tanggal, idPembeli, namaPembeli, namaBarang, jumlah, harga, totalHarga});
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "data gagal ditampilkan");
+            e.printStackTrace();
+        }
+        jTable1.setModel(model);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,31 +123,31 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "No_Transaksi", "Tanggal", "ID_Pembeli", "Nama_Pembeli", "Nama_Barang", "Jumlah", "Harga", "Total_Harga", "Total_Harga_Diskon", "Total_Harga_Akhir"
+                "No_Transaksi", "Tanggal", "ID_Pembeli", "Nama_Pembeli", "Nama_Barang", "Jumlah", "Harga", "Total_Harga"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -159,6 +206,11 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/synchronize-arrows-1.png"))); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,6 +251,11 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         new dasboard().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+        this.tampildata();
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
     /**
      * @param args the command line arguments
