@@ -9,8 +9,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -119,6 +123,11 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         jLabel266.setText("Data Riwayat Transaksi");
 
         btnCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search-alternate.png"))); // NOI18N
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
 
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -199,6 +208,11 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bin-1.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setBackground(new java.awt.Color(219, 234, 255));
         btnRefresh.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -256,6 +270,33 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.tampildata();
     }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+        String cari = inputCari.getText().trim();
+
+        if (!cari.isEmpty()) {
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+
+            jTable1.setRowSorter(sorter);
+
+            List<RowFilter<Object, Object>> filters = new ArrayList<>();
+            // Tambahkan filter untuk setiap kolom yang ingin dicari
+            for (int i = 0; i < model.getColumnCount(); i++) {
+                filters.add(RowFilter.regexFilter("(?i)" + cari, i));
+            }
+
+            RowFilter<Object, Object> rf = RowFilter.orFilter(filters);
+            sorter.setRowFilter(rf);
+        } else {
+            jTable1.setRowSorter(null);
+        }    
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+       
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
