@@ -280,7 +280,6 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
             jTable1.setRowSorter(sorter);
 
             List<RowFilter<Object, Object>> filters = new ArrayList<>();
-            // Tambahkan filter untuk setiap kolom yang ingin dicari
             for (int i = 0; i < model.getColumnCount(); i++) {
                 filters.add(RowFilter.regexFilter("(?i)" + cari, i));
             }
@@ -293,7 +292,32 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCariActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-       
+           int selectedRow = jTable1.getSelectedRow();
+            if (selectedRow != -1) {
+                try {
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");
+
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    String noTransaksi = model.getValueAt(selectedRow, 0).toString();
+
+                    String sqlDelete = "DELETE FROM transaksi WHERE no_transaksi = ?";
+                    PreparedStatement pstmtDelete = conn.prepareStatement(sqlDelete);
+                    pstmtDelete.setString(1, noTransaksi);
+
+                    int deletedRows = pstmtDelete.executeUpdate();
+                    if (deletedRows > 0) {
+                        JOptionPane.showMessageDialog(this, "Data berhasil dihapus.");
+                        tampildata();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Data dengan nomor transaksi " + noTransaksi + " tidak ditemukan.");
+                    }
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(this, "Gagal menghapus data.");
+                    e.printStackTrace();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Pilih data yang ingin dihapus.");
+            }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
