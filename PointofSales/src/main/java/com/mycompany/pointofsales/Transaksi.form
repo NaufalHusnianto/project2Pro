@@ -180,26 +180,14 @@
                                           <Component id="cekStatus" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel249" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="opsiMember" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="opsiNonMember" min="-2" pref="98" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel248" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                                          <Component id="inputNoTransaksi" min="-2" pref="203" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel249" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="opsiMember" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="opsiNonMember" min="-2" pref="98" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel254" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="inputKodeBarang" min="-2" pref="203" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel247" min="-2" pref="84" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
@@ -216,16 +204,22 @@
                                           <Component id="totalHarga" min="-2" pref="203" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel244" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="inputJumlahBarang" min="-2" pref="203" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel252" min="-2" pref="84" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="btnBayar" min="-2" pref="93" max="-2" attributes="0"/>
                                               <Component id="inputPembayaran" min="-2" pref="203" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel254" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel244" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="inputKodeBarang" alignment="1" min="-2" pref="203" max="-2" attributes="0"/>
+                                              <Component id="inputJumlahBarang" alignment="1" min="-2" pref="203" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -245,12 +239,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel248" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputNoTransaksi" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel249" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="opsiMember" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -268,22 +257,26 @@
                       </Group>
                       <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Component id="cekStatus" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="inputKodeBarang" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel254" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel244" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputJumlahBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="jLabel254" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel244" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="inputKodeBarang" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="inputJumlahBarang" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnHitungTotal" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="btnInputBarang" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel246" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="totalHarga" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -335,14 +328,6 @@
                 <Property name="text" type="java.lang.String" value="Kembali"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel248">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="No Transaksi"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel249">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -366,8 +351,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pembayaran"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="inputNoTransaksi">
             </Component>
             <Component class="javax.swing.JRadioButton" name="opsiMember">
               <Properties>

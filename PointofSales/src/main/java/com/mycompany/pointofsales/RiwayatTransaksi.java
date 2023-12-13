@@ -40,8 +40,6 @@ public class RiwayatTransaksi extends javax.swing.JFrame {
         model.addColumn("Jumlah");
         model.addColumn("Harga");
         model.addColumn("Total_Harga");
-        model.addColumn("Total_Harga_Diskon");
-        model.addColumn("Total_Harga_Akhir");
         
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis", "root", "");

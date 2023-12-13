@@ -6,6 +6,7 @@ package com.mycompany.pointofsales;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,11 +20,13 @@ public class dasboard extends javax.swing.JFrame {
     public dasboard() {
         initComponents();
         setLocationRelativeTo(this);
+    }
+    
+    public void showLoginDialog() {
         jDialog1.setVisible(true);
         jDialog1.setSize(745, 450);
         jDialog1.setLocationRelativeTo(this);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,6 +53,8 @@ public class dasboard extends javax.swing.JFrame {
         transaksi = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         riwayat = new javax.swing.JButton();
+
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -273,13 +278,24 @@ public class dasboard extends javax.swing.JFrame {
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
-        jDialog1.dispose();
+        System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
+        String inputUsername = inputNama.getText();
+        char[] inputPasswordChars = inputPassword.getPassword();
+        String inputPassword = new String(inputPasswordChars);
+
+        if (inputUsername.equals("admin") && inputPassword.equals("1234")) {
             jDialog1.dispose();
-            new dasboard().setVisible(true);
+
+            java.awt.EventQueue.invokeLater(() -> {
+                new dasboard().setVisible(true);
+            });
+        } else {
+            JOptionPane.showMessageDialog(this, "Login failed. Please check your username and password.");
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     /**
@@ -313,7 +329,8 @@ public class dasboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dasboard().setVisible(false);
+            dasboard dashboardInstance = new dasboard();
+            dashboardInstance.showLoginDialog();
             }
         });
     }
