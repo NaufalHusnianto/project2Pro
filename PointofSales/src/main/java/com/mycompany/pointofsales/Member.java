@@ -387,6 +387,7 @@ public class Member extends javax.swing.JFrame {
         delete.setBackground(new java.awt.Color(219, 234, 255));
         delete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         delete.setForeground(new java.awt.Color(51, 51, 51));
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bin-1.png"))); // NOI18N
         delete.setText("Delete");
         delete.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -398,6 +399,7 @@ public class Member extends javax.swing.JFrame {
         edit.setBackground(new java.awt.Color(219, 234, 255));
         edit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         edit.setForeground(new java.awt.Color(51, 51, 51));
+        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/grid-edit.png"))); // NOI18N
         edit.setText("Edit");
         edit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         edit.addActionListener(new java.awt.event.ActionListener() {
@@ -545,12 +547,12 @@ public class Member extends javax.swing.JFrame {
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // DELETE DATA MEMBER       
         int baris = jTable2.getSelectedRow();
-        int kolom = 1;
+        int kolom = 0;
         String nilai = jTable2.getValueAt(baris, kolom).toString();
         
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alat_tulis","root","");
-            String deleteQuery = "DELETE FROM `member` WHERE `id`.`nama_pembeli` =" + nilai;
+            String deleteQuery = "DELETE FROM `member` WHERE `member`.`id` =" + nilai;
             PreparedStatement stDelete = conn.prepareStatement(deleteQuery);
             stDelete.executeUpdate();
             stDelete.close();
